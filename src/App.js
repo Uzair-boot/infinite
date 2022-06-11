@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/header';
+import Business from './components/business/Business';
+import Technology from './components/business/Technology';
+import People from './components/business/People';
+import Innovation from './components/business/Innovation';
+import NWorld from './components/business/NWorld';
+import Results from './components/business/Results';
+import LessIsMore from './components/lessIsMore/LessIsMore';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <Header/>
+    <Business/>
+    <Technology/>
+    <People/>
+    <Innovation/>
+    <NWorld/>
+    <Results/> */}
+    <LessIsMore/>
+
+    </>
   );
 }
 
