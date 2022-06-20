@@ -16,6 +16,10 @@ import { NavLink } from 'react-router-dom';
 
 
 export default function SwipeableTemporaryDrawer({ data }) {
+
+    let trigger = () => {
+        console.log('hello I am triggered')
+    }
     const [state, setState] = React.useState({
         left: false,
     });
@@ -46,64 +50,25 @@ export default function SwipeableTemporaryDrawer({ data }) {
             onKeyDown={toggleDrawer(anchor, false)}
         >
 
-
-
             <List sx={{ paddingLeft: '8%' }}>
                 {data.map((text, index) => (
                     <Box key={text} sx={{ color: 'white', }}>
                         <ListItem button  >
-
-                            {/* <ListItem button key={text} >
-                                <ListItemText primary={text} />
-                            </ListItem> */}
-
-                            <HashLink to={`/#${text}`} smooth
-                                style={{
+                        <NavLink style={({ isActive }) => {
+                                return {
                                     textDecoration: 'none',
-                                    color: '#FFFFFF'
-                                }}
-                            >
-                                <ListItemText primary={text} />
-                            </HashLink>
-                        </ListItem>
-                        <Divider />
-                    </Box>
-                ))}
-            </List>
-
-
-
-
-{/* 
-            <List sx={{ paddingLeft: '8%' }}>
-                {data.map((text, index) => (
-                    <Box key={text} sx={{ color: 'white', }}>
-                        <ListItem button  >
+                                    color: isActive ? 'red' : 'white'
+                                }
+                            }}
+                                to={`${text}`} >
                             <ListItemText primary={text} />
 
-                            <NavLink style={({ isActive }) => {
-                                    return {
-                                        textDecoration: 'none',
-                                        color: isActive ? 'red' : 'white'
-                                    }
-                                }}
-                                    to= {`/#${text}`}
-                                >
-                                </NavLink>
-
-
-                            <NavLink to={`/#${text}`} smooth="true"
-                                style={{
-                                    textDecoration: 'none',
-                                    color: '#FFFFFF'
-                                }}
-                            >
                             </NavLink>
                         </ListItem>
                         <Divider />
                     </Box>
                 ))}
-            </List> */}
+            </List>
 
 
         </Box>

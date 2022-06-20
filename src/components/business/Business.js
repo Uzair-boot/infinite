@@ -7,7 +7,7 @@ import background from '../assets/background.png'
 export default function Business() {
 
     const myfontsize = useMediaQuery("(max-width: 900px)")
-
+    console.log("here")
     let starter1 = ['To Those Who Don’t Know Us' ]
     let starter2 = ['We Like To Introduce' ]
     let starter3 = ['Ourselves Through Our Vision' ]
